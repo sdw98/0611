@@ -2,37 +2,42 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        final String COLA = "콜라";
+        final String MILK = "밀키스";
+        final String PEP = "닥터페퍼";
+
+        final int COLA_PRICE = 1200;
+        final int MILK_PRICE = 1500;
+        final int PEP_PRICE = 800;
+
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("=== 자판기 메뉴 ===");
-        System.out.println("1. 닥터페퍼 ( 800원 ) ");
-        System.out.println(("2. 콜라 ( 1200원 )"));
-        System.out.println("3. 밀키스 ( 1500원 ) ");
+        System.out.printf("1. %s (%d원)\n", COLA, COLA_PRICE);
+        System.out.printf("2. %s (%d원)\n", MILK, MILK_PRICE);
+        System.out.printf("3. %s (%d원)\n", PEP, PEP_PRICE);
 
         int price = 0;
         int choice = scanner.nextInt();
         String item = "";
 
-
-        //입력한 값에 따른 조건문
-        //if문 (숫자를 비교), switch(단순히 값만 체크)
-
         switch (choice) {
             case 1:
-                item = "닥터페퍼";
-                price = 800;
-                break;
-            case 2:
                 item = "콜라";
                 price = 1200;
                 break;
-            case 3:
+            case 2:
                 item = "밀키스";
                 price = 1500;
                 break;
+            case 3:
+                item = "닥터페퍼";
+                price = 800;
+                break;
             default:
                 System.out.println("잘못입력하셨습니다");
-                return;   // 함수탈출(메인) 탈출
+                return;
         }
 
         System.out.println(item + "을(를) 선택하셨습니다. 금액을 넣어주세요: ");
