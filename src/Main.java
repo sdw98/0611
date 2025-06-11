@@ -38,12 +38,13 @@ public class Main {
         System.out.println(item + "을(를) 선택하셨습니다. 금액을 넣어주세요: ");
         int money = scanner.nextInt();
 
-        if (money < price) {
+        while (money < price) {
             System.out.println("금액이 부족합니다. 다시 넣어주세요");
-
-        } else {
-            int change = money - price;
-            System.out.printf("%s를 드립니다. 잔돈은 %d원 입니다.\n", item, change);
+            int money2 = scanner.nextInt();
+            money += money2;
         }
+
+        int change = money - price;
+        System.out.printf("%s를 드립니다. 잔돈은 %d원 입니다.\n", item, change);
     }
 }
